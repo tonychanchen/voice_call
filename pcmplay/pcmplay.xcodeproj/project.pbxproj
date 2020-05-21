@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A9387E7246FD5E80077E134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9387E6246FD5E80077E134 /* AppDelegate.m */; };
+		3A9387EA246FD5E80077E134 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9387E9246FD5E80077E134 /* SceneDelegate.m */; };
+		3A9387ED246FD5E80077E134 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3A9387EC246FD5E80077E134 /* ViewController.mm */; };
+		3A9387F0246FD5E80077E134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9387EE246FD5E80077E134 /* Main.storyboard */; };
+		3A9387F2246FD5E90077E134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9387F1246FD5E90077E134 /* Assets.xcassets */; };
+		3A9387F5246FD5E90077E134 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9387F3246FD5E90077E134 /* LaunchScreen.storyboard */; };
+		3A9387F8246FD5E90077E134 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9387F7246FD5E90077E134 /* main.m */; };
+		3A938802246FD5EA0077E134 /* pcmplayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A938801246FD5EA0077E134 /* pcmplayTests.m */; };
+		3A93880D246FD5EA0077E134 /* pcmplayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A93880C246FD5EA0077E134 /* pcmplayUITests.m */; };
+		3A93881C246FD6570077E134 /* doublesky_pcmplay.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3A93881B246FD6570077E134 /* doublesky_pcmplay.mm */; };
+		3AB8DE642470186A00E5D96B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB8DE632470186A00E5D96B /* AudioToolbox.framework */; };
+		3AB8DE6924701A8700E5D96B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB8DE6824701A8700E5D96B /* CoreAudio.framework */; };
+		3AB8DE6A2470225100E5D96B /* test.pcm in Resources */ = {isa = PBXBuildFile; fileRef = 3AB8DE652470198000E5D96B /* test.pcm */; };
+		3AB8DE6D247035D700E5D96B /* doublesky_pcmrecord.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8DE6C247035D700E5D96B /* doublesky_pcmrecord.mm */; };
+		3AB8DE7C2475278D00E5D96B /* doublesky_connector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8DE7A2475278D00E5D96B /* doublesky_connector.cpp */; };
+		3AB8DE7E2475285800E5D96B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB8DE7D2475285800E5D96B /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A9387FE246FD5EA0077E134 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A9387DA246FD5E80077E134 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A9387E1246FD5E80077E134;
+			remoteInfo = pcmplay;
+		};
+		3A938809246FD5EA0077E134 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A9387DA246FD5E80077E134 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A9387E1246FD5E80077E134;
+			remoteInfo = pcmplay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A9387E2246FD5E80077E134 /* pcmplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pcmplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9387E5246FD5E80077E134 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3A9387E6246FD5E80077E134 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3A9387E8246FD5E80077E134 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		3A9387E9246FD5E80077E134 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		3A9387EB246FD5E80077E134 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3A9387EC246FD5E80077E134 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		3A9387EF246FD5E80077E134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A9387F1246FD5E90077E134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A9387F4246FD5E90077E134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A9387F6246FD5E90077E134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9387F7246FD5E90077E134 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A9387FD246FD5EA0077E134 /* pcmplayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pcmplayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A938801246FD5EA0077E134 /* pcmplayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pcmplayTests.m; sourceTree = "<group>"; };
+		3A938803246FD5EA0077E134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A938808246FD5EA0077E134 /* pcmplayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pcmplayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A93880C246FD5EA0077E134 /* pcmplayUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pcmplayUITests.m; sourceTree = "<group>"; };
+		3A93880E246FD5EA0077E134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A93881A246FD6570077E134 /* doublesky_pcmplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = doublesky_pcmplay.h; sourceTree = "<group>"; };
+		3A93881B246FD6570077E134 /* doublesky_pcmplay.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = doublesky_pcmplay.mm; sourceTree = "<group>"; };
+		3AB8DE632470186A00E5D96B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3AB8DE652470198000E5D96B /* test.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.pcm; sourceTree = "<group>"; };
+		3AB8DE66247019D400E5D96B /* CoreAudioTypes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioTypes.framework; path = System/Library/Frameworks/CoreAudioTypes.framework; sourceTree = SDKROOT; };
+		3AB8DE6824701A8700E5D96B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		3AB8DE6B247035D700E5D96B /* doublesky_pcmrecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = doublesky_pcmrecord.h; sourceTree = "<group>"; };
+		3AB8DE6C247035D700E5D96B /* doublesky_pcmrecord.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = doublesky_pcmrecord.mm; sourceTree = "<group>"; };
+		3AB8DE7A2475278D00E5D96B /* doublesky_connector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = doublesky_connector.cpp; sourceTree = "<group>"; };
+		3AB8DE7B2475278D00E5D96B /* doublesky_connector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = doublesky_connector.hpp; sourceTree = "<group>"; };
+		3AB8DE7D2475285800E5D96B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A9387DF246FD5E80077E134 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AB8DE6924701A8700E5D96B /* CoreAudio.framework in Frameworks */,
+				3AB8DE642470186A00E5D96B /* AudioToolbox.framework in Frameworks */,
+				3AB8DE7E2475285800E5D96B /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9387FA246FD5EA0077E134 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A938805246FD5EA0077E134 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A9387D9246FD5E80077E134 = {
+			isa = PBXGroup;
+			children = (
+				3A9387E4246FD5E80077E134 /* pcmplay */,
+				3A938800246FD5EA0077E134 /* pcmplayTests */,
+				3A93880B246FD5EA0077E134 /* pcmplayUITests */,
+				3A9387E3246FD5E80077E134 /* Products */,
+				3AB8DE622470186A00E5D96B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3A9387E3246FD5E80077E134 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A9387E2246FD5E80077E134 /* pcmplay.app */,
+				3A9387FD246FD5EA0077E134 /* pcmplayTests.xctest */,
+				3A938808246FD5EA0077E134 /* pcmplayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A9387E4246FD5E80077E134 /* pcmplay */ = {
+			isa = PBXGroup;
+			children = (
+				3A9387E5246FD5E80077E134 /* AppDelegate.h */,
+				3A9387E6246FD5E80077E134 /* AppDelegate.m */,
+				3A9387E8246FD5E80077E134 /* SceneDelegate.h */,
+				3A9387E9246FD5E80077E134 /* SceneDelegate.m */,
+				3A9387EB246FD5E80077E134 /* ViewController.h */,
+				3A9387EC246FD5E80077E134 /* ViewController.mm */,
+				3A93881A246FD6570077E134 /* doublesky_pcmplay.h */,
+				3A93881B246FD6570077E134 /* doublesky_pcmplay.mm */,
+				3AB8DE6B247035D700E5D96B /* doublesky_pcmrecord.h */,
+				3AB8DE6C247035D700E5D96B /* doublesky_pcmrecord.mm */,
+				3AB8DE7A2475278D00E5D96B /* doublesky_connector.cpp */,
+				3AB8DE7B2475278D00E5D96B /* doublesky_connector.hpp */,
+				3AB8DE652470198000E5D96B /* test.pcm */,
+				3A9387EE246FD5E80077E134 /* Main.storyboard */,
+				3A9387F1246FD5E90077E134 /* Assets.xcassets */,
+				3A9387F3246FD5E90077E134 /* LaunchScreen.storyboard */,
+				3A9387F6246FD5E90077E134 /* Info.plist */,
+				3A9387F7246FD5E90077E134 /* main.m */,
+			);
+			path = pcmplay;
+			sourceTree = "<group>";
+		};
+		3A938800246FD5EA0077E134 /* pcmplayTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A938801246FD5EA0077E134 /* pcmplayTests.m */,
+				3A938803246FD5EA0077E134 /* Info.plist */,
+			);
+			path = pcmplayTests;
+			sourceTree = "<group>";
+		};
+		3A93880B246FD5EA0077E134 /* pcmplayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3A93880C246FD5EA0077E134 /* pcmplayUITests.m */,
+				3A93880E246FD5EA0077E134 /* Info.plist */,
+			);
+			path = pcmplayUITests;
+			sourceTree = "<group>";
+		};
+		3AB8DE622470186A00E5D96B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AB8DE7D2475285800E5D96B /* AVFoundation.framework */,
+				3AB8DE6824701A8700E5D96B /* CoreAudio.framework */,
+				3AB8DE66247019D400E5D96B /* CoreAudioTypes.framework */,
+				3AB8DE632470186A00E5D96B /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A9387E1246FD5E80077E134 /* pcmplay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A938811246FD5EA0077E134 /* Build configuration list for PBXNativeTarget "pcmplay" */;
+			buildPhases = (
+				3A9387DE246FD5E80077E134 /* Sources */,
+				3A9387DF246FD5E80077E134 /* Frameworks */,
+				3A9387E0246FD5E80077E134 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pcmplay;
+			productName = pcmplay;
+			productReference = 3A9387E2246FD5E80077E134 /* pcmplay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A9387FC246FD5EA0077E134 /* pcmplayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A938814246FD5EA0077E134 /* Build configuration list for PBXNativeTarget "pcmplayTests" */;
+			buildPhases = (
+				3A9387F9246FD5EA0077E134 /* Sources */,
+				3A9387FA246FD5EA0077E134 /* Frameworks */,
+				3A9387FB246FD5EA0077E134 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A9387FF246FD5EA0077E134 /* PBXTargetDependency */,
+			);
+			name = pcmplayTests;
+			productName = pcmplayTests;
+			productReference = 3A9387FD246FD5EA0077E134 /* pcmplayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A938807246FD5EA0077E134 /* pcmplayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A938817246FD5EA0077E134 /* Build configuration list for PBXNativeTarget "pcmplayUITests" */;
+			buildPhases = (
+				3A938804246FD5EA0077E134 /* Sources */,
+				3A938805246FD5EA0077E134 /* Frameworks */,
+				3A938806246FD5EA0077E134 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A93880A246FD5EA0077E134 /* PBXTargetDependency */,
+			);
+			name = pcmplayUITests;
+			productName = pcmplayUITests;
+			productReference = 3A938808246FD5EA0077E134 /* pcmplayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A9387DA246FD5E80077E134 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = zz;
+				TargetAttributes = {
+					3A9387E1246FD5E80077E134 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					3A9387FC246FD5EA0077E134 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 3A9387E1246FD5E80077E134;
+					};
+					3A938807246FD5EA0077E134 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 3A9387E1246FD5E80077E134;
+					};
+				};
+			};
+			buildConfigurationList = 3A9387DD246FD5E80077E134 /* Build configuration list for PBXProject "pcmplay" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A9387D9246FD5E80077E134;
+			productRefGroup = 3A9387E3246FD5E80077E134 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A9387E1246FD5E80077E134 /* pcmplay */,
+				3A9387FC246FD5EA0077E134 /* pcmplayTests */,
+				3A938807246FD5EA0077E134 /* pcmplayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A9387E0246FD5E80077E134 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9387F5246FD5E90077E134 /* LaunchScreen.storyboard in Resources */,
+				3A9387F2246FD5E90077E134 /* Assets.xcassets in Resources */,
+				3AB8DE6A2470225100E5D96B /* test.pcm in Resources */,
+				3A9387F0246FD5E80077E134 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9387FB246FD5EA0077E134 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A938806246FD5EA0077E134 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A9387DE246FD5E80077E134 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AB8DE6D247035D700E5D96B /* doublesky_pcmrecord.mm in Sources */,
+				3AB8DE7C2475278D00E5D96B /* doublesky_connector.cpp in Sources */,
+				3A9387ED246FD5E80077E134 /* ViewController.mm in Sources */,
+				3A93881C246FD6570077E134 /* doublesky_pcmplay.mm in Sources */,
+				3A9387E7246FD5E80077E134 /* AppDelegate.m in Sources */,
+				3A9387F8246FD5E90077E134 /* main.m in Sources */,
+				3A9387EA246FD5E80077E134 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9387F9246FD5EA0077E134 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A938802246FD5EA0077E134 /* pcmplayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A938804246FD5EA0077E134 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A93880D246FD5EA0077E134 /* pcmplayUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A9387FF246FD5EA0077E134 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A9387E1246FD5E80077E134 /* pcmplay */;
+			targetProxy = 3A9387FE246FD5EA0077E134 /* PBXContainerItemProxy */;
+		};
+		3A93880A246FD5EA0077E134 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A9387E1246FD5E80077E134 /* pcmplay */;
+			targetProxy = 3A938809246FD5EA0077E134 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A9387EE246FD5E80077E134 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A9387EF246FD5E80077E134 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A9387F3246FD5E90077E134 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A9387F4246FD5E90077E134 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A93880F246FD5EA0077E134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3A938810246FD5EA0077E134 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A938812246FD5EA0077E134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DQFEA2B5H2;
+				GCC_INPUT_FILETYPE = automatic;
+				INFOPLIST_FILE = pcmplay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.pcmplay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A938813246FD5EA0077E134 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DQFEA2B5H2;
+				GCC_INPUT_FILETYPE = automatic;
+				INFOPLIST_FILE = pcmplay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.pcmplay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3A938815246FD5EA0077E134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DQFEA2B5H2;
+				INFOPLIST_FILE = pcmplayTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.pcmplayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pcmplay.app/pcmplay";
+			};
+			name = Debug;
+		};
+		3A938816246FD5EA0077E134 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DQFEA2B5H2;
+				INFOPLIST_FILE = pcmplayTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.pcmplayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pcmplay.app/pcmplay";
+			};
+			name = Release;
+		};
+		3A938818246FD5EA0077E134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DQFEA2B5H2;
+				INFOPLIST_FILE = pcmplayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.pcmplayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = pcmplay;
+			};
+			name = Debug;
+		};
+		3A938819246FD5EA0077E134 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DQFEA2B5H2;
+				INFOPLIST_FILE = pcmplayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.pcmplayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = pcmplay;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A9387DD246FD5E80077E134 /* Build configuration list for PBXProject "pcmplay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A93880F246FD5EA0077E134 /* Debug */,
+				3A938810246FD5EA0077E134 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A938811246FD5EA0077E134 /* Build configuration list for PBXNativeTarget "pcmplay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A938812246FD5EA0077E134 /* Debug */,
+				3A938813246FD5EA0077E134 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A938814246FD5EA0077E134 /* Build configuration list for PBXNativeTarget "pcmplayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A938815246FD5EA0077E134 /* Debug */,
+				3A938816246FD5EA0077E134 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A938817246FD5EA0077E134 /* Build configuration list for PBXNativeTarget "pcmplayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A938818246FD5EA0077E134 /* Debug */,
+				3A938819246FD5EA0077E134 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A9387DA246FD5E80077E134 /* Project object */;
+}
