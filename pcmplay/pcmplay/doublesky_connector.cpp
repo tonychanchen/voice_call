@@ -274,5 +274,4 @@ doublesky_connector::~doublesky_connector()
     recv_stop = true;
     send_cond.notify_one();
     send_thread.join();
-    recv_thread.join();
 }
