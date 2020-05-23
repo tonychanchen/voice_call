@@ -77,14 +77,14 @@
 static OSStatus record_callback(void *inRefCon, AudioUnitRenderActionFlags *ioActionFlags, const AudioTimeStamp *inTimeStamp, UInt32 inBusNumber, UInt32 inNumberFrame, AudioBufferList *__nullable ioData)
 {
     doublesky_pcmrecord *r = (__bridge doublesky_pcmrecord *)(inRefCon);
-    // 这里被坑惨了AudioBufferList如果自己初始化并且分配mData内存 在AVAudioSessionCategoryPlayAndRecord模式并且使用扬声器播放时 AudioUnitRender时会返回-50 kAudioOutputUnitProperty_SetInputCallback有说明 Note that the inputProc will always receive a NULL AudioBufferList in ioData
-    AudioBufferList tmp;
-    tmp.mNumberBuffers = 1;
-    tmp.mBuffers[0].mData = NULL;
-    tmp.mBuffers[0].mDataByteSize = 0;
-    tmp.mBuffers[0].mNumberChannels = 1;
+    // 这里被坑惨了AudioBufferList如果自己初始化并且分配mData内存 在AVAudioSessionCategoryPlayAndRecord模式并且使用扬声器播放时 AudioUnitRender时会返回-50 kAudioOutputUnitProperty_SetInputCallback有说明 Note that the inputProc will always receive a NULL AudioBufferList in ioData猜测应该是系统要自己控制AudioBufferList.mData的内存分配与释放 将AudioBufferList每次回调才初始化并且mData传NULL解决此问题
+    AudioBufferList list;
+    list.mNumberBuffers = 1;
+    list.mBuffers[0].mData = NULL;
+    list.mBuffers[0].mDataByteSize = 0;
+    list.mBuffers[0].mNumberChannels = 1;
     
-    OSStatus error = AudioUnitRender(r->audioUnit, ioActionFlags, inTimeStamp, inBusNumber, inNumberFrame, &tmp);
+    OSStatus error = AudioUnitRender(r->audioUnit, ioActionFlags, inTimeStamp, inBusNumber, inNumberFrame, &list);
 //    static FILE *fp = NULL;
 //    if (!fp)
 //        fp = fopen([[NSHomeDirectory() stringByAppendingFormat:@"/Documents/io.pcm"] UTF8String], "wb");
@@ -94,8 +94,8 @@ static OSStatus record_callback(void *inRefCon, AudioUnitRenderActionFlags *ioAc
     if (error != noErr)
         NSLog(@"record_callback error : %d", error);
     
-    int size = tmp.mBuffers[0].mDataByteSize;
-    char *src = (char*)tmp.mBuffers[0].mData;
+    int size = list.mBuffers[0].mDataByteSize;
+    char *src = (char*)list.mBuffers[0].mData;
     if (size > 0 && src)
     {
         char *dst = (char*)calloc(1, size);
