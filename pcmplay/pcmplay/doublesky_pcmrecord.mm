@@ -85,9 +85,9 @@ static OSStatus record_callback(void *inRefCon, AudioUnitRenderActionFlags *ioAc
     tmp.mBuffers[0].mNumberChannels = 1;
     
     OSStatus error = AudioUnitRender(r->audioUnit, ioActionFlags, inTimeStamp, inBusNumber, inNumberFrame, &tmp);
-    static FILE *fp = NULL;
-    if (!fp)
-        fp = fopen([[NSHomeDirectory() stringByAppendingFormat:@"/Documents/io.pcm"] UTF8String], "wb");
+//    static FILE *fp = NULL;
+//    if (!fp)
+//        fp = fopen([[NSHomeDirectory() stringByAppendingFormat:@"/Documents/io.pcm"] UTF8String], "wb");
 //    if (error == noErr)
 //        fwrite(tmp.mBuffers[0].mData, 1, tmp.mBuffers[0].mDataByteSize, fp);
     
