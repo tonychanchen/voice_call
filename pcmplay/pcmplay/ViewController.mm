@@ -48,6 +48,7 @@
     [record set_record_callback:record_callback user:(__bridge void * _Nonnull)(self)];
     assert(record);
     
+//    [record start_record];
     [self set_callback];
     [self ui];
 }
@@ -76,6 +77,8 @@ static void record_callback(char *buffer, int size, void *user)
 {
     ViewController *vc = (__bridge ViewController *)(user);
 //    [vc->pcm push:buffer size:size];
+//
+//    return;
     if (vc->client.state == doublesky_state_connected)
         vc->client.push_audio(buffer, size);
     
@@ -99,7 +102,7 @@ static void record_callback(char *buffer, int size, void *user)
     }
     else if (client.state == doublesky_state_connecting)
     {
-        [self show_str:@"正在连接啊,请确认另外一台手机在同一个局域网下且开启了服务端"];
+        [self show_str:@"正在连接,请确认另外一台手机在同一个局域网下且开启了服务端"];
     }
 }
 
@@ -119,7 +122,7 @@ static void record_callback(char *buffer, int size, void *user)
     }
     else if (server.state == doublesky_state_connecting)
     {
-        [self show_str:@"正在连接啊,请确认另外一台手机在同一个局域网下且开启了客户端"];
+        [self show_str:@"正在连接,请确认另外一台手机在同一个局域网下且开启了客户端"];
     }
 }
 
@@ -166,9 +169,14 @@ static void record_callback(char *buffer, int size, void *user)
             
             [self set_btn:self.client_btn state:(doublesky_state)state str:@"客户端"];
             if (state == doublesky_state_cannotreach)
+            {
                 [self show_str:@"对方已关闭连接"];
+                [self->record stop_record];
+            }
             else if (state == doublesky_state_connect_failed)
+            {
                 [self show_str:@"连接失败"];
+            }
         });
     }, std::placeholders::_1));
     
@@ -180,9 +188,14 @@ static void record_callback(char *buffer, int size, void *user)
             
             [self set_btn:self.server_btn state:(doublesky_state)state str:@"服务端"];
             if (state == doublesky_state_cannotreach)
+            {
                 [self show_str:@"对方已关闭连接"];
+                [self->record stop_record];
+            }
             else if (state == doublesky_state_connect_failed)
+            {
                 [self show_str:@"连接失败"];
+            }
         });
     }, std::placeholders::_1));
     
