@@ -15,6 +15,8 @@
 
 #include "doublesky_connector.hpp"
 
+#define doublesky_udp_max 1472
+
 void doublesky_connector::start_client()
 {
     state = doublesky_state_connecting;
@@ -58,12 +60,15 @@ void doublesky_connector::start_client()
         if (!can_read_write(sock, sock_read, 1000))
             continue;
         
+        // 此处有个小坑 recvfrom的recv_length一定不能传0 传0会导致获取不到对方ip地址
         struct sockaddr_in recv_addr;
-        socklen_t recv_length = 0;
+        socklen_t recv_length;
         memset(&recv_addr, 0, sizeof(struct sockaddr_in));
         if (recvfrom(sock, recv_buffer, sizeof(recv_buffer), 0, (struct sockaddr*)&recv_addr, &recv_length) < 0)
             continue;
         
+//        short port = ntohs(recv_addr.sin_port);
+//        char *ip = inet_ntoa(recv_addr.sin_addr);
         if (memcmp(recv_buffer, "connect", 7) != 0)
             continue;
         
@@ -82,7 +87,7 @@ end:
     }
     else
     {
-        recv_stop = true;
+        recv_stop = false;
         state = doublesky_state_connected;
         start_recv();
     }
@@ -131,10 +136,14 @@ void doublesky_connector::start_service()
         if (!can_read_write(sock, sock_write, 1000))
             continue;
             
-        sendto(sock, "connect", 7, 0, (struct sockaddr*)&recv_addr, recv_length);
+        if (sendto(sock, "connect", 8, 0, (struct sockaddr*)&recv_addr, recv_length) < 0)
+            continue;
         
         if (connect(sock, (struct sockaddr*)&recv_addr, recv_length) == 0)
+        {
+            ret = 0;
             break;
+        }
     }
     
 end:
@@ -175,6 +184,8 @@ bool doublesky_connector::can_read_write(int s, int rw, int time_out)
 
 void doublesky_connector::start_recv()
 {
+    // 如果当前对象可被joinable,则会调用terminate()报错
+    // https://www.runoob.com/w3cnote/cpp-std-thread.html C++ std::thread
     recv_thread = std::thread([this]
     {
         while(!recv_stop)
@@ -183,19 +194,22 @@ void doublesky_connector::start_recv()
                 continue;
             
             ssize_t size = 0;
-            char buffer[1472];
-            memset(buffer, 0, 1472);
+            char buffer[doublesky_udp_max];
+            memset(buffer, 0, doublesky_udp_max);
             if ((size = recv(sock, buffer, sizeof(buffer), 0)) < 0)
             {
                 if (errno == EINTR)
                     continue;
                 
-                if (errno == EHOSTUNREACH)
+                // 这里以为可连接的udp会返回ICMP的EHOSTUNREACH 结果是ECONNREFUSED
+                if (errno == ECONNREFUSED)
                 {
-                    recv_stop = false;
                     state = doublesky_state_cannotreach;
+                    connect_callback(state);
                     break;
                 }
+                
+//                std::cout << errno <<std::endl;
             }
             else
             {
@@ -204,8 +218,10 @@ void doublesky_connector::start_recv()
                 recv_callback(pcm, (int)size);
             }
         }
+        state = doublesky_state_idle;
         connect_callback(state);
     });
+    recv_thread.detach();
 }
 
 void doublesky_connector::push_audio(char *b, int size)
@@ -229,9 +245,23 @@ doublesky_connector::doublesky_connector()
             if (send_stop)
                 continue;
             
-            std::shared_ptr<char> &b = send_queue.front().first;
-            unsigned int size = send_queue.front().second;
-            send(sock, b.get(), size, 0);
+            char *tmp = send_queue.front().first.get();
+            unsigned int size = send_queue.front().second, offset = 0;
+            while(size > 0)
+            {
+                if (size >= doublesky_udp_max)
+                {
+                    send(sock, tmp+offset, doublesky_udp_max, 0);
+                    offset += doublesky_udp_max;
+                    size -= doublesky_udp_max;
+                }
+                else
+                {
+                    send(sock, tmp+offset, size, 0);
+                    size = 0;
+                }
+            }
+            
             send_queue.pop();
             lock.unlock();
         }
@@ -240,8 +270,8 @@ doublesky_connector::doublesky_connector()
 
 doublesky_connector::~doublesky_connector()
 {
-    send_stop = false;
-    recv_stop = false;
+    send_stop = true;
+    recv_stop = true;
     send_cond.notify_one();
     send_thread.join();
     recv_thread.join();

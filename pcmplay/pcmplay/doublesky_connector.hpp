@@ -52,7 +52,7 @@ public:
     
     void stop_recv()
     {
-        recv_stop = false;
+        recv_stop = true;
         close(sock);
         sock = 0;
         state = doublesky_state_idle;
