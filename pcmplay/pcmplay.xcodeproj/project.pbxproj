@@ -487,6 +487,7 @@
 				DEVELOPMENT_TEAM = DQFEA2B5H2;
 				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = pcmplay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,6 +506,7 @@
 				DEVELOPMENT_TEAM = DQFEA2B5H2;
 				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = pcmplay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
